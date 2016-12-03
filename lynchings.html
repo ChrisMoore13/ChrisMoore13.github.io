@@ -204,15 +204,15 @@
                                 <div style="float:right;padding-bottom:30px;">
                                     <div style="text-align:center;text-transform:uppercase;font-size:12px;padding:0;">Legend</div>
                                     <div>
-                                        <div class="maplegend" style="background-color:#3182bd;"><br />XX+</div>
-                                        <div class="maplegend" style="background-color:#9ecae1;"><br />XX-XX</div>
-                                        <div class="maplegend" style="background-color:#deebf7;"><br />XX-XX</div>
-                                        <div class="maplegend-a" style="background-color:#eff3ff;"><br />0-XX</div>
+                                        <div class="maplegend" style="background-color:#3182bd;"><br />8+</div>
+                                        <div class="maplegend" style="background-color:#9ecae1;"><br />2+-8</div>
+                                        <div class="maplegend" style="background-color:#deebf7;"><br />0+-2</div>
+                                        <div class="maplegend-a" style="background-color:#eff3ff;"><br />0</div>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="top-var" >Variable: <span style="color:#333;"><span id="variable">6.45</span>%</span></h4>
+                                <h4 class="top-var" >Total Number of Lynchings: <span style="color:#333;"><span id="variable">6.45</span>%</span></h4>
                             </div>
                             <div class="attr">
                                 Graphic by Christopher A. Moore
@@ -302,16 +302,16 @@
                     variable = parseFloat(abawd_data[j]['abawd_rate']);
                     id_name = '#'+ abawd_data[j]['county'];
                     switch (true){
-                        case (variable < 1.72178592 ):
+                        case (variable <= 0 ):
                             $(id_name).css('fill','#eff3ff');
                             break;
-                        case (variable >= 1.72178592 && variable < 2.363903231 ):
+                        case (variable > 0 && variable < 2.01 ):
                             $(id_name).css('fill','#deebf7');
                             break;
-                        case (variable >= 2.363903231 && variable < 3.28539106 ):
+                        case (variable >= 2.01 && variable < 8 ):
                             $(id_name).css('fill','#9ecae1');
                             break;
-                        case (variable >= 3.28539106 ):
+                        case (variable >= 8 ):
                             $(id_name).css('fill','#3182bd');
                             break;
                         default:
